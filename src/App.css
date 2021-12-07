@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: rgb(255, 255, 255);
+  --red: rgb(255, 0, 0);
+  --dark-red: rgb(175, 0, 0);
+  --green: rgb(0, 100, 0);
+  --light-green: rgb(0, 200, 0);
+  --black: rgb(0, 0, 0);
+  --light-grey: rgb(220, 220, 220);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: var(--white);
+}
+
+/* Common */
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  border-bottom-style: solid;
+  border-color: var(--white);
+}
+
+.white {
+  color: var(--white);
+}
+.red {
+  color: var(--red);
+}
+.green {
+  color: var(--green);
+}
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+p {
+  font-size: 1.7rem;
+}
+
+/* Layout */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 10rem 1fr 6rem;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  background: var(--black);
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  grid-area: main;
+  min-height: 64rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--black);
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+/* Home */
+
+.home-container {
+  max-width: 1080px;
+  width: 100%;
+}
+.home-container__elements {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer and Navbar */
+.footer-container,
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.navbar-container {
+  width: 70%;
+  justify-content: flex-end;
+}
+
+.navbar-container__links {
+  margin: 0 3rem 0 2rem;
+  font-size: 2rem;
+}
+
+/* Form */
+
+.form-container,
+.card-container {
+  width: inherit;
+  padding: 2.2rem;
+}
+
+.form-container input[type='text'],
+.form-container input[type='date'],
+.form-container input[type='email'],
+textarea {
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-color: var(--black);
+  padding: 0.2rem 0 0.2rem 0.2rem;
+  font-size: 1.8rem;
+}
+.form-container form {
+  max-width: 50%;
+}
+
+.form-container__element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1.2rem;
+  width: inherit;
+}
+
+.form-container__element--button {
+  width: 60%;
+}
+
+/* buttons */
+
+.btn {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 8px;
+}
+.btn-a,
+.btn-a:hover {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+}
+
+.btn-green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn-green:hover {
+  background-color: var(--light-green);
+}
+
+.btn-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn-red:hover {
+  background-color: var(--dark-red);
+}
+
+.btn-50-width {
+  width: 50%;
+}
+/* Lead Card */
+
+.card-container__list {
+  background-color: var(--light-grey);
+  border-radius: 10px;
+  width: 50%;
+  padding: 1rem;
+}
+/* Mobile (phone and tablet) */
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.3rem;
+  }
+  .navbar-container {
+    width: 100%;
+  }
+  .navbar-container__links {
+    margin: 0 2rem 0 1.5rem;
+  }
+
+  .form-container form {
+    max-width: 100%;
+  }
+  .card-container {
+    padding: 2.2rem 0;
+  }
+  .card-container__list {
+    width: 80%;
+  }
+}
